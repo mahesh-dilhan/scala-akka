@@ -10,7 +10,7 @@ import io.mahesh.WhoCollector.Country
 
 
 object Notifer {
-  final case class Notification(message: String, donation: Int)
+  final case class Notification(message: String, donation: Long)
   def apply() : Behavior[Notification] = Behaviors.receive{
     (context, message) =>
         context.log.info(s"${message}")
@@ -25,6 +25,7 @@ object VaccineDistributor {
   def apply() : Behavior[Vaccine] = Behaviors.receive {
     (context,message) =>
         context.log.info(s"${message}")
+      message.replyTo ! Notification(s"New shipment of vaccine to ${message.country}", message.volume)
       Behaviors.same
   }
 }
