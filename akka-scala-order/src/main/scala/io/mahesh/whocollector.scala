@@ -7,6 +7,10 @@ import io.mahesh.VaccineDistributor.Vaccine
 import io.mahesh.WhoCollector.Country
 
 
+object RegionalCountry {
+  final case class 
+}
+
 object VaccineDistributor {
 
   final case class Vaccine(country: String, volume: Long)
