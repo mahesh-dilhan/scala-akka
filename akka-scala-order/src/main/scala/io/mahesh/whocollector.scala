@@ -51,7 +51,6 @@ object WhoCollector {
 }
 
 object Main extends App {
-  println("hello")
   val whoCollector : ActorSystem[WhoCollector.Country] = ActorSystem(WhoCollector(), "collector")
   whoCollector ! Country("US", 100)
   whoCollector ! Country("SG", 100)
