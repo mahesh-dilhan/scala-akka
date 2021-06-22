@@ -1,7 +1,6 @@
 package io.mahesh
 
 import akka.actor.typed.ActorSystem
-import akka.actor.typed.ActorRef
 import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.Behavior
 import io.mahesh.WhoCollector.Country
@@ -21,4 +20,8 @@ object Main extends App {
   println("hello")
   val whoCollector : ActorSystem[WhoCollector.Country] = ActorSystem(WhoCollector(), "collector")
   whoCollector ! Country("US", 100)
+  whoCollector ! Country("SG", 100)
+  whoCollector ! Country("SL", 100)
+
+
 }
