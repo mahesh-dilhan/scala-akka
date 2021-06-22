@@ -12,11 +12,16 @@ import io.mahesh.WhoCollector.Country
 object WhoCollector {
   final case class Country (country: String, postiveCases: Int)
 
-  def apply() : Behavior[Country] = Behaviors.receive {
-    (context, message) =>
-        println(message.toString)
-        context.log.info(message.toString)
-      Behaviors.same
+  def apply() : Behavior[Country] = Behaviors.setup {
+    context =>
+      Behaviors.receiveMessage {
+        message =>
+          println(message.toString)
+          context.log.info(message.toString)
+          Behaviors.same
+      }
+
+
   }
 }
 
