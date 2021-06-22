@@ -2,7 +2,7 @@
 ### WHO to collect contry stat -> then Define Vaccine required -> then Notify contry 
 ### 
 
-```aidl
+```
 Maheshs-MacBook-Pro:akka-scala-order mahesh$ sbt run
 [info] welcome to sbt 1.4.6 (AdoptOpenJDK Java 13.0.2)
 [info] loading global plugins from /Users/mahesh/.sbt/1.0/plugins
