@@ -5,13 +5,17 @@ import akka.actor.typed.scaladsl.Behaviors
 import akka.actor.typed.Behavior
 import io.mahesh.WhoCollector.Country
 
+
+
+
+
 object WhoCollector {
   final case class Country (country: String, postiveCases: Int)
 
-  def apply() : Behavior[Country] = Behaviors.receiveMessage {
-    message =>
+  def apply() : Behavior[Country] = Behaviors.receive {
+    (context, message) =>
         println(message.toString)
-
+        context.log.info(message.toString)
       Behaviors.same
   }
 }
