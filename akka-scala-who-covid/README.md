@@ -1,5 +1,5 @@
 
-### WHO to collect contry stat -> then Define Vaccine required -> then Notify contry 
+### WHO to collect contry stat -> then Define Vaccine required -> then Notify country 
 ### 
 
 ```
